@@ -6,13 +6,13 @@
 
 ## 기술 스택
 
-- Python 3.11
+- Python 3.11 이상
 - Flask 3.0.3
 - SQLite
-- Ollama 로컬 모델
+- Ollama 로컬 모델 `exaone3.5:2.4b`
 - `requests` 2.32.3
 
-## 프로젝트 구조
+## 프로젝트 구조 (vulnerable 브랜치 기준)
 
 ```text
 .
@@ -39,12 +39,14 @@
 
 ## 실행 방법
 
+저장소를 클론한 뒤 프로젝트 폴더에서 git switch vulnerable을 실행합니다. 아래 가상환경 생성과 DB 초기화는 처음 실행할 때 한 번만 진행합니다.
+
 프로젝트 루트 폴더에서 아래 명령을 실행합니다.
 
 ### Windows CMD
 
 ```cmd
-py -3.11 -m venv venv
+py -m venv venv
 venv\Scripts\activate
 python -m pip install -r requirements.txt
 python init_db.py
@@ -61,17 +63,15 @@ python init_db.py
 python app.py
 ```
 
-브라우저에서 아래 주소로 접속합니다.
+브라우저에서 [http://127.0.0.1:5001](http://127.0.0.1:5001)에 접속합니다.
 
-```text
-http://127.0.0.1:5001
-```
+````
 
-가상환경을 종료하려면 다음 명령을 입력합니다.
+가상환경을 종료하려면 서버를 실행한 터미널에서 Ctrl+C로 서버를 종료한 뒤, 다음 명령을 입력합니다.
 
 ```text
 deactivate
-```
+````
 
 ## 테스트 계정
 
