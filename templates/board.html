@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>게시판</title>
+  </head>
+  <body>
+    <h1>게시판</h1>
+
+    <ul>
+      <!-- 전달받은 게시글을 하나씩 꺼내 제목 표시 -->
+      {% for post in posts %}
+      <li>
+        <a href="{{ url_for('post_detail', post_id=post['id']) }}">
+          {{ post["title"] }}
+        </a>
+      </li>
+      {% else %}
+      <li>등록된 게시글이 없습니다.</li>
+      {% endfor %}
+    </ul>
+    {% if session.get("user_id") %}
+    <h2>게시글 작성</h2>
+
+    <form action="{{ url_for('board') }}" method="post">
+      <div>
+        <label for="title">제목</label>
+        <input id="title" name="title" type="text" required />
+      </div>
+
+      <div>
+        <label for="content">내용</label>
+        <textarea id="content" name="content" required></textarea>
+      </div>
+
+      <button type="submit">등록</button>
+    </form>
+    {% else %}
+    <p>게시글을 작성하려면 로그인해 주세요.</p>
+    <a href="{{ url_for('login') }}">로그인</a>
+    {% endif %}
+  </body>
+</html>

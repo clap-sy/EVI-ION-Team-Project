@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>게시글 보기</title>
+  </head>
+  <body>
+    <h1>{{ post["title"] }}</h1>
+
+    {# VULN-2: 학습용으로 게시글 내용을 이스케이프 없이 출력 #}
+    <div>{{ post["content"] | safe }}</div>
+
+    <a href="{{ url_for('board') }}">게시판으로 돌아가기</a>
+  </body>
+</html>
