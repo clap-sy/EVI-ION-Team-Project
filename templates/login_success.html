@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인 성공</title>
+  </head>
+  <body>
+    <p>{{ session["username"] }}님, 로그인되었습니다.</p>
+    <a href="{{ url_for('logout') }}">로그아웃</a>
+  </body>
+</html>
