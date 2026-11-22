@@ -17,6 +17,7 @@
 ```text
 .
 ├── app.py
+├── db.py
 ├── init_db.py
 ├── requirements.txt
 ├── README.md
@@ -24,6 +25,11 @@
 ├── .gitignore
 ├── .gitattributes
 ├── templates/
+│   ├── login.html
+│   ├── nav.html
+│   ├── board.html
+│   ├── post_detail.html
+│   └── mypage.html
 ├── static/
 └── docs/
     └── evidence/
@@ -63,15 +69,21 @@ python init_db.py
 python app.py
 ```
 
-브라우저에서 [http://127.0.0.1:5001](http://127.0.0.1:5001)에 접속합니다.
+## 웹사이트 이용 방법
 
-````
+1. 서버 실행 후 [http://127.0.0.1:5001](http://127.0.0.1:5001)에 접속합니다.
+2. 시드 계정으로 로그인하면 게시판으로 이동합니다.
+3. 게시글 제목을 클릭해 내용을 확인하거나 새 게시글을 작성합니다.
+4. 공통 메뉴에서 게시판, 내 마이페이지, 로그아웃을 선택합니다.
+
+게시판 목록·상세 조회·작성과 마이페이지는 로그인이 필요합니다.
+비로그인 상태에서 접근하면 로그인 화면으로 이동하며 안내 메시지가 표시됩니다.
 
 가상환경을 종료하려면 서버를 실행한 터미널에서 Ctrl+C로 서버를 종료한 뒤, 다음 명령을 입력합니다.
 
-```text
+```cmd
 deactivate
-````
+```
 
 ## 테스트 계정
 
