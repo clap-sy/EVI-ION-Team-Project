@@ -5,6 +5,7 @@
     <title>게시글 보기</title>
   </head>
   <body>
+    {% include "nav.html" %}
     <h1>{{ post["title"] }}</h1>
 
     {# VULN-2: 학습용으로 게시글 내용을 이스케이프 없이 출력 #}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>마이페이지</title>
+  </head>
+  <body>
+    {% include "nav.html" %}
+
+    <h1>{{ user["username"] }}님의 마이페이지</h1>
+
+    <p>사용자 ID: {{ user["id"] }}</p>
+    <p>이메일: {{ user["email"] }}</p>
+    <p>전화번호: {{ user["phone"] }}</p>
+  </body>
+</html>

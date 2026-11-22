@@ -5,8 +5,12 @@
     <title>로그인</title>
   </head>
   <body>
+    {% include "nav.html" %}
     <h1>로그인</h1>
-
+    <!-- 다른 화면에서 전달한 안내 메시지 표시 -->
+    {% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+    {% endfor %}
     <!-- 입력한 정보를 POST 방식으로 /login에 전송 -->
     <form action="/login" method="post">
       <div>

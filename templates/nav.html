@@ -1,0 +1,14 @@
+<nav>
+  <a href="{{ url_for('board') }}">게시판</a>
+
+  {% if session.get("user_id") %}
+  <a href="{{ url_for('mypage', user_id=session['user_id']) }}">
+    내 마이페이지
+  </a>
+  <span>{{ session["username"] }}님</span>
+  <a href="{{ url_for('logout') }}">로그아웃</a>
+  {% else %}
+  <a href="{{ url_for('login') }}">로그인</a>
+  {% endif %}
+</nav>
+<hr />
