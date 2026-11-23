@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 상담 챗봇</title>
+</head>
+<body>
+  {% include "nav.html" %}
+  <h1>AI 상담 챗봇</h1>
+
+  <form method="post" action="/chat">
+    <input type="text" name="message" size="60" placeholder="질문을 입력하세요">
+    <button type="submit">보내기</button>
+  </form>
+
+  {% if message %}
+  <p><b>나:</b> {{ message }}</p>
+  <p><b>챗봇:</b> {{ reply }}</p>
+  {% endif %}
+</body>
+</html>
