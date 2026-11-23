@@ -6,6 +6,7 @@
     내 마이페이지
   </a>
   <span>{{ session["username"] }}님</span>
+  <a href="{{ url_for('chat.chat') }}">AI 상담</a>
   <a href="{{ url_for('logout') }}">로그아웃</a>
   {% else %}
   <a href="{{ url_for('login') }}">로그인</a>

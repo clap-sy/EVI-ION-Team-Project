@@ -3,12 +3,14 @@ import sqlite3
 
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 from db import DB_PATH, get_post, get_user_info
+from chatbot import chat_bp   
 
 app = Flask(__name__)
 
 # Flask가 세션 쿠키에 서명할 때 사용하는 키
 # 서버를 다시 시작하면 새 키가 생성되어 다시 로그인해야 함
 app.secret_key = secrets.token_hex(32)
+app.register_blueprint(chat_bp)
 
 
 @app.route("/")
