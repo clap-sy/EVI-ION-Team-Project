@@ -15,7 +15,8 @@
 
   {% if message %}
   <p><b>나:</b> {{ message }}</p>
-  <p><b>챗봇:</b> {{ reply }}</p>
+  {# VULN-7: 챗봇 응답을 이스케이프 없이 출력 → 응답 속 HTML/JS 실행 #}
+  <p><b>챗봇:</b> {{ reply | safe }}</p>
   {% endif %}
 </body>
 </html>
